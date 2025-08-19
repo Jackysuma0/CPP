@@ -1,29 +1,30 @@
-#include <algorithm>
-#include <cstring>
 #include <iostream>
+#include <sstream>
 
-class Add
+class Contact
 {
-    public:
-        void Add_num(char *first_name, char *second_name, int ph_num, char *darkest_secret);
-        char *first_name;
-        char    *second_name;
-        char    *nickname;
-        int     *phone_num;
-        char    *darkest_secret;
-        // ~Add();
+    public :
+        void set_contact(std::string first, std::string second, std::string nick,
+        std::string phone, std::string secret);
+        void    print_contact();
+        std::string get_first_name();
+        std::string get_last_name();
+        std::string get_nickname();
     private:
-        int phone_num;
-        char * string;
+            std::string first_name;
+            std::string second_name;
+            std::string nickname;
+            std::string phone_number;
+            std::string darkest_secret;
 };
 
-class Exit
-{
-
-};
-
-class Search
+class Phonebook
 {
     public:
-        char * Contact;
+        Phonebook();
+        void    add_contact();
+        void    search_contact();
+    private :
+        Contact contacts[8];
+        int total_contacts;
 };

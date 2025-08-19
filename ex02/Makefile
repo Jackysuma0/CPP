@@ -1,8 +1,8 @@
-NAME = phonebook
+NAME = account
 
-CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
+CC = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = add.cpp main.cpp
+SRC = *.cpp
 
 OBJ = $(SRC:.c=.o)
 
