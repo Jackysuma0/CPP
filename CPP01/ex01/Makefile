@@ -1,8 +1,8 @@
-NAME = megaphone
+NAME = Zombie
 
-CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
+CC = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

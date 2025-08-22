@@ -4,7 +4,7 @@ CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
 
 SRC = add.cpp main.cpp
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 RM = rm -f
 

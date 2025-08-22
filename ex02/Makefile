@@ -2,9 +2,9 @@ NAME = account
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = *.cpp
+SRC = tests.cpp Account.cpp
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 RM = rm -f
 
