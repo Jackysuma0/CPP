@@ -22,8 +22,6 @@ void    Harl::error()
 
 void    Harl::complain(std::string level)
 {
-    void    (Harl::*ptrHarl)(void) = NULL;
-    void    (Harl::*arrHarl[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int     i;
     std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
@@ -32,15 +30,26 @@ void    Harl::complain(std::string level)
     {
         if (str[i] == level)
         {
-            ptrHarl = arrHarl[i];
             break ;
         }
         i++;
     }
-    if (!ptrHarl)
+    switch(i)
     {
-        std::cout << "Error" << "\n";
-        return ;
+        case 0:
+            this->debug();
+            break ;
+        case 1:
+            this->info();
+            break ;
+        case 2:
+            this->warning();
+            break ;
+        case 3:
+            this->error();
+            break ;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << "\n";
+            break ;
     }
-    (this->*ptrHarl)();
 }
