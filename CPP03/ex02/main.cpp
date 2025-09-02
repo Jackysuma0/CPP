@@ -2,36 +2,39 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main()
-{
-    ClapTrap    Hero("Hero");
-    ClapTrap*   Evil = new ClapTrap("Evil");
-    ScavTrap    Dragon("Dragon");
-    FragTrap    Slayer("Slayer");
+int main( void ) {
 
-    std::cout << "\nHero attacks Dragon\n";
-    Hero.attack("Dragon");
-    Dragon.takeDamage(5);
+	FragTrap		*clap = new FragTrap("FR4G-TP");
 
-    std::cout << "\nDragon repairs himself\n";
-    Dragon.beRepaired(15);
+	std::cout << std::endl;
+    std::cout << " attack on CL4P-TP " << std::endl;
+    clap->attack("CL4P-TP");
+    std::cout << " attack with no damage " << std::endl;
+    clap->takeDamage( 0 );
+    std::cout << " repair of 1 point " << std::endl;
+    clap->beRepaired( 1 );
+    std::cout << " repair of 0 point " << std::endl;
+    clap->beRepaired( 0 );
+    std::cout << " taking 10 damage points " << std::endl;
+    clap->takeDamage( 10 );
+	std::cout << std::endl << std::endl;
+    std::cout << " testing the energy" << std::endl;
+    for ( int i = 0; i < 98; i++ ) {
+        
+        clap->beRepaired( 1 );
+    }
+	std::cout << std::endl << std::endl;
+    std::cout << " taking 189 damage points " << std::endl;
+    clap->takeDamage( 189 );
+    std::cout << " taking 1 damage point " << std::endl;
+    clap->takeDamage( 1 );
+    std::cout << " repair of 1 point " << std::endl;
+	clap->beRepaired( 1 );
+    std::cout << std::endl;
+    
+    clap->highFivesGuys();
+    
+	delete clap;
 
-    std::cout << "\nDragon enters Guard Gate mode\n";
-    Dragon.guardGate();
-
-    std::cout << "\nDragon attacks Evil\n";
-    Dragon.attack("Evil");
-    Evil->takeDamage(10);
-
-    std::cout << "\nSlayer attacks Dragon\n";
-    Slayer.attack("Dragon");
-    Dragon.takeDamage(20);
-
-    std::cout << "\nSlayer requests a high five\n";
-    Slayer.highFivesGuys();
-
-    delete Evil;
-
-    std::cout << "\nEnd of main — destructors will be called now\n";
-    return 0;
+	return (0);
 }

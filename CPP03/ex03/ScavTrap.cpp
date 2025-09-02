@@ -41,13 +41,15 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 
 void    ScavTrap::attack( const std::string& target)
 {
-    if (this->energyPoints > 0)
+    if (this->hitPoints <= 0)
+        std::cout << "ScavTrap" << this->name << "Is dead and cannot attack!" << "\n";
+    else if (this->energyPoints > 0)
     {
         std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << "\n";
         this->energyPoints -= 1;
     }
     else
-        std::cout << "Not enough hit points!" << "\n";
+        std::cout << "Not enough energy points!" << "\n";
 }
 
 void ScavTrap::guardGate()
