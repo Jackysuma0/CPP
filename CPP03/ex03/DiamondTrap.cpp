@@ -1,11 +1,15 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
     this->name = name;
-    this->hitPoints = FragTrap::hitPoints;
-    this->energyPoints = ScavTrap::energyPoints;
-    this->attackDamage = FragTrap::attackDamage;
+
+    this->hitPoints = 100;
+    this->energyPoints = 30;
+    this->attackDamage = 20;
+    // this->hitPoints = FragTrap::hitPoints;
+    // this->energyPoints = ScavTrap::energyPoints;
+    // this->attackDamage = FragTrap::attackDamage;
     std::cout << "Default constructor for DiamondTrap: " << this->name << " called" << "\n";
 }
 

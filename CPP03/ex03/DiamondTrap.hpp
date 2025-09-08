@@ -5,6 +5,7 @@
 #include <string>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
