@@ -1,8 +1,8 @@
-NAME = phonebook
+NAME = Bureaucrat
 
 CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC = add.cpp main.cpp
+SRC = Bureaucrat.cpp main.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) -c $< -o $@
 
 clean:
