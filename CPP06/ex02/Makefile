@@ -1,8 +1,8 @@
-NAME = Bureaucrat
+NAME = base
 
-CC = c++ -Wall -Wextra -Werror -std=c++98 -g3 -no-pie
+CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC = Bureaucrat.cpp main.cpp Form.cpp
+SRC = Base.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
